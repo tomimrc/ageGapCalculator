@@ -1,0 +1,191 @@
+@import url("./assets/fonts/Poppins-Regular.ttf");
+@import url("./assets/fonts/Poppins-Bold.ttf");
+@import url("./assets/fonts/Poppins-ExtraBold.ttf");
+@import url("./assets/fonts/Poppins-ExtraBoldItalic.ttf");
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+body{
+    height:100vh ;
+    width: 100vw;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main{
+    padding: 40px;
+    width: 50%;
+    /* height: 70%; */
+    background-color:#ffffff ;
+    border-bottom-right-radius: 50px;
+    height: fit-content;
+}
+
+.formContainer{
+    height: 40%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+
+}
+.btnDiv{
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    gap: 0px;
+    align-items: center;
+    height: 100%;
+}
+
+.btnDiv hr{
+    display: block;
+    width: 80%;
+    border-top: 1px solid rgb(0, 0, 0)
+}
+
+.btn{
+    border-radius: 100px;
+    width: 120px;
+    height: 120px;
+    background-color:hsl(259, 100%, 65%) ;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index:1 ;
+}
+
+.btn:hover{
+    background-color: black;
+}
+input{
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.295);
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+    width: 100%;
+}
+
+.infoContainer{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-size: 70px;
+}
+
+.infoContainer div{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.infoContainer div span{
+    font-size: 100px;
+    color: hsl(259, 100%, 65%);
+    font-family: "Poppins", sans-serif;
+    font-style:normal;
+    font-weight: 900;
+}
+.infoContainer div h2{
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    font-weight: 900;
+}
+.inputsDiv{
+    width: 100%;
+    justify-content: start;
+    gap: 20px;
+    display: flex;
+}
+
+.inputsDiv div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: start;
+    gap: 20px;
+    width: 200px;
+}
+.inputsDiv div label{
+font-size: 25px;
+font-family: "Poppins", sans-serif;
+font-style: normal;
+font-weight: 600;
+}
+
+input:focus{
+    border: 1px solid purple;
+    cursor: pointer;
+}
+
+.invalid{
+    border: 1px solid red;
+    color: red;
+}
+
+p{
+    display: none;
+}
+.invalidP{
+    display: block;
+    color: red;
+}
+
+@media (max-width:1100px) {
+    main{
+        width: 90%;
+        
+    }
+
+    .btnDiv{
+        display: flex;
+        justify-content: center;
+    }
+    .btnDiv hr{
+        position: absolute;
+        z-index: 0;
+    }
+    .form{
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inputsDiv{
+        justify-content: center;
+    }
+    .infoContainer{
+        align-items: center;
+        font-size: 40px;
+    }
+
+    .btn{
+        width: 80px;
+        height: 80px;
+    }
+    input{
+        padding: 10px;
+    }
+    .infoContainer div h2{
+        font-family: "Poppins", sans-serif;
+        font-style: italic;
+        font-weight: 900;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+</head>
+<body>
+<main>
+  <div class="formContainer">
+    <form action="" id="form" class="form">
+      <div class="inputsDiv">
+        <div>
+          <label for="dayText">Day</label>
+          <input type="number" name="day" id="day" placeholder="DD">
+          <p id="p1">This field is required</p>
+        </div>
+        <div>
+          <label for="monthText">Month</label>
+          <input type="number" name="month" id="month" placeholder="MM">
+          <p id="p2">This field is required</p>
+        </div>
+        <div>
+          <label for="yearText">Year</label>
+          <input type="number" name="year" id="year" placeholder="YYYY">
+          <p id="p3">This field is required</p>
+        </div>
+      </div>
+      <div class="btnDiv">
+        <hr>
+        <button class="btn" type="submit" id="button"><img src="./assets/images/icon-arrow.svg" alt=""></button>
+      </div>
+    </form>
+  </div>
+  <div class="infoContainer">
+    <div>
+      <span id="spanYear">--</span><h2 class="yearText" id="yearText">years</h2>
+    </div>
+    <div>
+      <span id="spanMonth">--</span><h2 class="monthText" id="monthText">months</h2>
+    </div>
+    <div>
+      <span id="spanDay">--</span><h2 class="dayText" id="dayText">days</h2>
+    </div>
+  </div>
+</main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
