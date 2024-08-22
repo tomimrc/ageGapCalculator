@@ -22,10 +22,10 @@ const ejecutar = (e) => {
     const year = document.getElementById("year")
     const month = document.getElementById("month")
     const day = document.getElementById("day")
-    const yearValue = year.value
-    const monthValue = month.value
-    const dayValue = day.value
-    const birthDate = new Date(yearValue, monthValue - 1, dayValue)
+    let yearValue = year.value
+    let monthValue = month.value -1
+    let dayValue = day.value
+    const birthDate = new Date(yearValue, monthValue , dayValue)
     const today = new Date()
 
     const obj = [day,month,year]
@@ -40,28 +40,45 @@ const ejecutar = (e) => {
             }
         }
 
-    } else if ((dayValue < 1 || dayValue > 31) || (monthValue < 1 || monthValue > 12) || birthDate > today) {
+    } else if ((dayValue < 1 || dayValue > 31) || (monthValue < 0 || monthValue > 12) || birthDate > today) {
         for (let index = 0; index < p.length; index++) {
             p[index].innerText = `Must be a valid ${obj[index].id}`
             p[index].classList.add("invalidP")
         }
         
-    } else if(birthDate.getDate() !== parseInt(dayValue) || birthDate.getMonth() !== parseInt(monthValue-1) || birthDate.getFullYear() !== parseInt(yearValue) ){
+        
+    } else if(birthDate.getDate() !== parseInt(dayValue) || birthDate.getMonth() !== parseInt(monthValue) || birthDate.getFullYear() !== parseInt(yearValue) ){
         p[0].innerText = "Must be a valid date"
         p[0].classList.add("invalidP")
         day.classList.add("invalid")
+        console.log(birthDate.getDate(), parseInt(dayValue), birthDate.getMonth(), parseInt(monthValue), birthDate.getFullYear(), parseInt(yearValue));
     }
     
 
     else {
+
+        yearValue = today.getFullYear() - birthDate.getFullYear();
+        monthValue = today.getMonth() - birthDate.getMonth();
+        dayValue = today.getDate() - birthDate.getDate();
+
+        if (dayValue < 0) {
+            monthValue--;
+            dayValue += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); // Days in the previous month
+            console.log('me ejecuto' )
+        }
+        
+        if (monthValue < 0) {
+            yearValue--;
+            monthValue += 12;
+        }
         for (let index = 0; index < p.length; index++) {
             p[index].classList.remove("invalidP")
             
         }
-        spanYear.innerText = today.getFullYear() - birthDate.getFullYear()
-        spanMonth.innerText = today.getMonth() - birthDate.getMonth()
-        spanDay.innerText = today.getDate() - birthDate.getDate()
-
+        spanYear.innerText = yearValue
+        spanMonth.innerText = monthValue
+        spanDay.innerText = dayValue 
+        
     }
 
 }    
